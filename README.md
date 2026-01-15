@@ -16,5 +16,3 @@ Explore the app ;)
 
 Thank you for reading this far and have a great day!
 =======
-- Author: Cebajel Tanan
-- Contact: cebajel@iitdh.ac.in

@@ -1,0 +1,12 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="header">
+    <h1>Hi, {{adminName}}</h1>
+    <div class="top-right-buttons">
+        <button type="button" class="secondary-button" (click)="navigateToHome()">Home</button>
+        <button type="button" class="secondary-button" (click)="navigateToProfile()">Profile</button>
+        <button type="button" class="secondary-button" (click)="logout()">Logout</button>
+    </div>
+</div>

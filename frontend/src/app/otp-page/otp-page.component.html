@@ -1,0 +1,30 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="container">
+    <div class="otp-container">
+        <h1 class="otp-heading">Enter OTP</h1>
+        <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" (input)="moveToNext($event, 0)" (keydown)="handleBackspace($event, 0)"
+                    #otp1 (paste)="handlePaste($event, 0)" autofocus>
+                <input type="text" maxlength="1" (input)="moveToNext($event, 1)" (keydown)="handleBackspace($event, 1)"
+                    #otp2 (paste)="handlePaste($event, 1)">
+                <input type="text" maxlength="1" (input)="moveToNext($event, 2)" (keydown)="handleBackspace($event, 2)"
+                    #otp3 (paste)="handlePaste($event, 2)">
+                <input type="text" maxlength="1" (input)="moveToNext($event, 3)" (keydown)="handleBackspace($event, 3)"
+                    #otp4 (paste)="handlePaste($event, 3)">
+                <input type="text" maxlength="1" (input)="moveToNext($event, 4)" (keydown)="handleBackspace($event, 4)"
+                    #otp5 (paste)="handlePaste($event, 4)">
+                <input type="text" maxlength="1" (input)="moveToNext($event, 5)" (keydown)="handleBackspace($event, 5)"
+                    #otp6 (paste)="handlePaste($event, 5)">
+            </div>
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            <div class="otp-actions">
+                <button type="submit">Submit OTP</button>
+                <button type="button" (click)="resendOtp()">Resend OTP</button>
+            </div>
+        </form>
+    </div>
+</div>

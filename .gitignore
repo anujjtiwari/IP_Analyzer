@@ -1,0 +1,8 @@
+Pipfile
+Pipfile.lock
+.vscode/
+__pycache__/
+.DS_Store
+./backend/keys/
+./archived/
+test*.json

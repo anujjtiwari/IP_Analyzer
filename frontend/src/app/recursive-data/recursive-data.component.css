@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+table td, table th {
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child {
+    border-bottom: none;
+}
+
+/* th:first-child, td:first-child {
+    width: 10%;
+} */
+
+.key {
+    width: 20%;
+}

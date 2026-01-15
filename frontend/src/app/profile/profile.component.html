@@ -1,0 +1,63 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="container">
+    <app-header></app-header>
+
+    <div class="profile-container">
+        <div class="buttons-header">
+            <i (click)="navigateToHome()">
+                <fa-icon [icon]="['fas', 'house-user']"></fa-icon>
+            </i>
+
+            <i (click)="deleteUser()">
+                <fa-icon [icon]="['fas', 'trash']"></fa-icon>
+            </i>
+        </div>
+
+        <div class="profile-field">
+            <div class="input-field">
+                <label for="name">Name:</label>
+                <input #myName type="text" id="name" [value]="user.name" [readonly]="!isEditingName" [(ngModel)]="editedName" />
+            </div>
+            <i *ngIf="!isEditingName" (click)="editField('name')">
+                <fa-icon [icon]="['far', 'pen-to-square']"></fa-icon>
+            </i>
+
+            <div *ngIf="isEditingName">
+                <i (click)="saveChanges('name')">
+                    <fa-icon [icon]="['far', 'circle-check']"></fa-icon>
+                </i>
+
+                <i (click)="cancelChanges('name')">
+                    <fa-icon [icon]="['far', 'circle-xmark']"></fa-icon>
+                </i>
+            </div>
+        </div>
+
+        <div class="profile-field">
+            <div class="input-field">
+                <label for="email">Email:</label>
+                <input #myEmail type="email" id="email" [value]="user.email" [readonly]="!isEditingEmail"
+                    [(ngModel)]="editedEmail" />
+            </div>
+            <i *ngIf="!isEditingEmail" (click)="editField('email')">
+                <fa-icon [icon]="['far', 'pen-to-square']"></fa-icon>
+            </i>
+
+            <div *ngIf="isEditingEmail">
+                <i (click)="saveChanges('email')">
+                    <fa-icon [icon]="['far', 'circle-check']"></fa-icon>
+                </i>
+
+                <i (click)="cancelChanges('email')">
+                    <fa-icon [icon]="['far', 'circle-xmark']"></fa-icon>
+                </i>
+            </div>
+        </div>
+        <div class="full-width">
+            <button class="secondary-button" (click)="updatePassword()">Update Password</button>
+        </div>
+    </div>
+</div>

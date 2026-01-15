@@ -1,0 +1,34 @@
+<table *ngIf="data">
+	<!-- Handle objects -->
+	<ng-container *ngIf="isObject(data); else handleArray">
+		<tr *ngFor="let entry of asKeyValue(data) | keyvalue">
+			<td class="key"><strong>{{ entry.key }}</strong></td>
+			<td>
+				<ng-container
+					*ngIf="isObject(entry.value) || isArray(entry.value); else simpleValue">
+					<!-- Recursively render nested objects or arrays -->
+					<app-recursive-data [data]="entry.value"></app-recursive-data>
+				</ng-container>
+				<ng-template #simpleValue>{{ entry.value }}</ng-template>
+			</td>
+		</tr>
+	</ng-container>
+
+	<!-- Handle arrays -->
+	<ng-template #handleArray>
+		<ng-container *ngIf="isArray(data); else simpleValue">
+			<tr *ngFor="let item of data;let i = index">
+				<td class="key"><strong>Index {{ i }}:</strong></td>
+				<td>
+					<ng-container *ngIf="isObject(item) || isArray(item); else simpleItem">
+						<!-- Recursively render array items if they are objects or arrays -->
+						<app-recursive-data [data]="item"></app-recursive-data>
+					</ng-container>
+					<ng-template #simpleItem>{{ item }}</ng-template>
+				</td>
+			</tr>
+		</ng-container>
+		
+		<ng-template #simpleValue>{{ data }}</ng-template>
+	</ng-template>
+</table>

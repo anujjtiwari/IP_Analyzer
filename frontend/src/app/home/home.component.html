@@ -1,0 +1,33 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="container">
+	<app-header></app-header>
+
+	<div class="ip-form">
+		<form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label for="inputField">Enter IP or Domain Name:</label>
+				<input type="text" id="inputField" formControlName="ip_domain" required />
+				<div *ngIf="ip_domain?.invalid && ip_domain?.touched">
+					<small class="error">Input is required.</small>
+				</div>
+			</div>
+
+			<div class="checkbox-group">
+				<label *ngFor="let option of options" class="tooltip">
+					<input type="checkbox" [formControlName]="option.name" /> {{ option.label
+					}}
+					<span class="tooltiptext">{{ option.tooltip }}</span>
+				</label>
+			</div>
+
+			<div class="button-group">
+				<button type="submit" class="primary-button"
+					[class.visible]="homeForm.valid"
+					[disabled]="homeForm.invalid">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>

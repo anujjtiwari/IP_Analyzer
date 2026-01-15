@@ -1,0 +1,98 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: auto;
+}
+
+.profile-container {
+    width: 70%;
+    max-width: 400px;
+    min-width: 250px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    overflow-x: auto;
+}
+
+.buttons-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.profile-field {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-field {
+    align-items: center;
+    display: flex;
+    width: 80%;
+}
+
+.input-field label {
+    display: block;
+    font-size: 1rem; /* 16px */
+    color: #555;
+    /* margin-bottom: 0.5rem; 8px */
+}
+
+input {
+    border: 0.0625rem solid #ccc; /* 1px */
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1rem; /* 16px */
+    padding: 0.7rem;
+    width: 80%;
+    margin-left: 10px;
+    transition: border-color 0.3s;
+    overflow-x: auto;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+i {
+    margin-left: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.full-width{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.secondary-button {
+    padding: 1rem 2rem;
+    /* Increased padding for buttons */
+    border: 0.1rem solid #ccc; /* 1px */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, opacity 0.3s ease;
+    /* Increased font size for buttons */
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #eee;
+}
+
+.secondary-button:hover {
+    background-color: #04fefe;
+    transform: scale(1.05);
+}

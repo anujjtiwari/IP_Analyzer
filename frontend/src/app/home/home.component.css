@@ -1,0 +1,176 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto;
+}
+
+.ip-form {
+    background-color: white;
+    padding: 3rem;
+    /* Increased padding for a larger form */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    min-width: 400px;
+    /* Increased width to make the form larger */
+    margin: 0 auto;
+}
+
+@media (max-height: 700px) {
+    .ip-form{
+        margin: 0 auto 10%;
+    }
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    /* Increased spacing between form elements */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    /* Increased margin below labels */
+    font-weight: bold;
+    color: #555;
+    font-size: 1.125rem;
+    /* Increased font size */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.80rem 0 1rem 0.75rem;
+    /* Increased padding for input fields */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.125rem;
+    /* Increased font size */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0085de;
+    box-shadow: 0 0 5px rgba(0, 133, 222, 0.3);
+}
+
+.checkbox-group {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #555;
+    font-size: 1rem;
+    /* Increased font size for checkboxes */
+}
+
+.button-group {
+    text-align: center;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 1rem 2rem;
+    /* Increased padding for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, opacity 0.3s ease;
+    font-size: 1rem;
+    /* Increased font size for buttons */
+}
+
+.primary-button {
+    background-color: #0085de;
+    color: white;
+    /* transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s; */
+    opacity: 0;
+}
+
+.primary-button:hover {
+    background-color: #005fa3;
+    transform: scale(1.05);
+}
+
+.primary-button.visible {
+    opacity: 1;
+}
+
+.error {
+    color: red;
+    font-size: 0.875rem;
+    /* Slightly increased font size for error message */
+    margin-top: 0.5rem;
+}
+
+.checkbox-group {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #555;
+    font-size: 1rem;
+    position: relative;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    /* Position the tooltip text to the right of the checkbox */
+    white-space: nowrap;
+    /* Prevents text wrapping */
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s;
+    max-width: 70%;
+    /* Set a max width if needed */
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    /* Position the arrow to the left side */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    left: 40%;
+    /* Adjust left position to align with the checkbox */
+}
+
+.tooltiptext {
+    white-space: normal;
+    /* Allows text to wrap */
+    word-wrap: break-word;
+    /* Ensures long words break properly */
+    width: auto;
+    /* Allows the tooltip to scale with text */
+}

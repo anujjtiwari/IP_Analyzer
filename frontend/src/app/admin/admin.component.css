@@ -1,0 +1,101 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto;
+}
+
+.user-list-container {
+    width: 90vw;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, max-height 0.3s ease;
+}
+
+.user-list-container:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.sparse-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-bar {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.search-bar input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.filter-group {
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    margin-right: 10px;
+}
+
+.filter-group select {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: auto;
+}
+
+thead {
+    background-color: #eee;
+}
+
+th,
+td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: cyan;
+}
+
+
+thead tr {
+    transition: none;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+i {
+    cursor: pointer;
+}

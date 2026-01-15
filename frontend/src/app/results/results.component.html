@@ -1,0 +1,29 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="container">
+    <app-header></app-header>
+
+    <div class="results-container">
+        <button type="button" class="secondary-button" (click)="navigateToHome()">Home</button>
+
+        <div class="result-card" *ngFor="let category of resultCategories" (click)="toggleExpand(category, cardDetails)">
+            <div class="card-summary-and-header">
+                <h3>{{ category.name }}</h3>
+                <div class="card-summary">
+
+                    <!-- Use recursive component for nested summary -->
+                    <app-recursive-data [data]="category.summary"></app-recursive-data>
+                    <ng-template #simpleSummary>{{ category.summary | json }}</ng-template>
+                </div>
+            </div>
+            <div class="card-details" #cardDetails>
+                <app-recursive-data [data]="category.details"></app-recursive-data>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="secondary-button" (click)="navigateToHome()">Home</button>
+    </div>
+    </div>
+</div>

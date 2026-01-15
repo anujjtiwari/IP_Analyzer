@@ -1,0 +1,42 @@
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+
+<div class="sign-in-container">
+	<div class="sign-in-box">
+		<div class="header">
+			<h1>IP Analyzer</h1>
+			<h2>Login</h2>
+		</div>
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+			<div class="input-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" formControlName="email">
+				<div *ngIf="email?.invalid && email?.touched" class="error">
+					<div *ngIf="email?.errors?.['required']">Email is required</div>
+					<div *ngIf="email?.errors?.['email']">Invalid email address</div>
+				</div>
+			</div>
+			<div class="input-group">
+				<label for="password">Password</label>
+				<div class="password-container">
+					<input [type]="isPasswordVisible ? 'text' : 'password'" id="password" formControlName="password">
+					<i (click)="togglePasswordVisibility()">
+						<fa-icon [icon]="isPasswordVisible ? ['fas', 'eye-slash'] : ['fas', 'eye']"></fa-icon>
+					</i>
+				</div>
+				<div *ngIf="password?.invalid && password?.touched" class="error">
+					Password is required
+				</div>
+				<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+			</div>
+			<div class="sign-in-button-container">
+				<button type="submit" class="sign-in-button" [class.visible]="loginForm.valid">Login</button>
+			</div>
+			<div class="footer">
+				<a [routerLink]="['/forgot-password']" routerLinkActive="router-link-active">Forgot Password?</a>
+				<a [routerLink]="['/sign-up']" routerLinkActive="router-link-active">Sign Up</a>
+			</div>
+		</form>
+	</div>
+</div>

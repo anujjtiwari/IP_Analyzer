@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+/* background: linear-gradient(to bottom, #508C9B 80%, #201E43 20%); */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #3498db, #8e44ad);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,3 +1,5 @@
+# can be done on a linux based system but if you're using a windows device please follow the following steps:
+
 # Step 1: Microsoft Remote Desktop Setup — Linux
 
 Update system packages and install graphical interface

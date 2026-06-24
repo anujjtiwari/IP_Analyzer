@@ -8,7 +8,9 @@
     <div class="results-container">
         <button type="button" class="secondary-button" (click)="navigateToHome()">Home</button>
 
-        <div class="result-card" *ngFor="let category of resultCategories" (click)="toggleExpand(category, cardDetails)">
+
+        <div class="result-card" *ngFor="let category of resultCategories"
+            (click)="toggleExpand(category, cardDetails)">
             <div class="card-summary-and-header">
                 <h3>{{ category.name }}</h3>
                 <div class="card-summary">
@@ -21,9 +23,15 @@
             <div class="card-details" #cardDetails>
                 <app-recursive-data [data]="category.details"></app-recursive-data>
             </div>
+            <div *ngIf="category.aiSummary" class="ai-summary-container" (click)="$event.stopPropagation()">
+                <div class="ai-summary-header">
+                    <h4>Summary</h4>
+                </div>
+                <p class="ai-summary-text">{{ category.aiSummary }}</p>
+            </div>
         </div>
         <div class="footer">
             <button type="button" class="secondary-button" (click)="navigateToHome()">Home</button>
-    </div>
+        </div>
     </div>
 </div>

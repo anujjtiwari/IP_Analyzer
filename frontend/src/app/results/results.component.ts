@@ -32,13 +32,17 @@ export class ResultsComponent implements OnInit {
 	prepareResults() {
 		this.isLoading = true;
 		const summary = this.results.results_summary;
+		const aiSummaries = summary.ai_summary || {};
 		for (const key in summary) {
-
+			if (key === 'ai_summary') {
+				continue;
+			}
 			if (summary[key] && Object.keys(summary[key]).length > 0){
 				this.resultCategories.push({
 					name: key,
 					summary: summary[key],
 					details: this.results.results[key] || {}, // Full details from results
+					aiSummary: aiSummaries[key] || '',
 					expanded: false
 				});
 			}
